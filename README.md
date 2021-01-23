@@ -11,7 +11,7 @@ Download the repository from GitHub and run locally on a terminal:
 ```
 git clone https://github.com/yerbolkhassen/puppetagent.git
 cd puppetagent
-bash main.sh
+sudo bash main.sh
 ```
 
 ## Contributors

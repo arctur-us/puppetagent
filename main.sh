@@ -6,7 +6,7 @@
 #                        -> add to sudoers -> sign certificate -> set run interval -> start service
 source inc/get_package.sh
 
-echo "hello world"
+echo "Started installing Puppet"
 
 # download package agent
 get_package
