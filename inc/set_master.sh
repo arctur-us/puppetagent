@@ -1,8 +1,8 @@
 #!/bin/bash
 # set_master
 function set_master {
-  $HOSTSFILE="/etc/hosts"
-  if grep -Fxq "$FILENAME" puppet
+  HOSTSFILE="/etc/hosts"
+  if grep -Fxq "$HOSTSFILE" puppet
   then
     # code if found
     echo 'Already in place'
