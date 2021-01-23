@@ -5,7 +5,7 @@ function set_master {
   if grep -Fq puppet "$HOSTSFILE"
   then
     # code if found
-    ;
+    ;;
   else
     # code if not found
     echo | sudo tee -a $HOSTSFILE
