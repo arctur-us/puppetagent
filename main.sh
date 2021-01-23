@@ -1,0 +1,12 @@
+#!/bin/bash
+# main.sh
+
+# edit hosts file
+# download package agent -> install package agent -> install puppet module
+#                        -> add to sudoers -> sign certificate -> set run interval -> start service
+source inc/get_package.sh
+
+echo "hello world"
+
+# download package agent
+get_package
