@@ -2,7 +2,7 @@
 # set_master
 function set_master {
   HOSTSFILE="/etc/hosts"
-  if grep -Fxq "$HOSTSFILE" puppet
+  if grep -Fxqs "$HOSTSFILE" puppet
   then
     # code if found
     echo 'Already in place'
