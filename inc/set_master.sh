@@ -8,7 +8,7 @@ function set_master {
     echo 'Already in place'
   else
     # code if not found
-    echo '192.168.56.2 puppet' | sudo tee -a $HOSTSFILE
+    echo '\n192.168.56.2 puppet' | sudo tee -a $HOSTSFILE
   fi
   # case `grep -Fx puppet "$HOSTSFILE" >/dev/null; echo $?` in
   # 0)
