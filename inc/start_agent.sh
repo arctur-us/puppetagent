@@ -11,8 +11,8 @@ function start_agent {
     *)       echo "Unknown $1" ;;
   esac
   # check if already running and enabled
-  sudo systemctl restart puppet
-  sudo systemctl enable puppet
+  systemctl restart puppet
+  systemctl enable puppet
   echo 'Added to systemd'
 }
 
@@ -42,12 +42,12 @@ function puppet_conf {
   if ! grep -Fq master "$1"
   then
     # if not found
-    echo | sudo tee -a $1
-    echo '[master]' | sudo tee -a $1
-    echo '  certname=puppet' | sudo tee -a $1
-    echo '[agent]' | sudo tee -a $1
-    echo "  certname=`hostname`" | sudo tee -a $1
-    echo "  runinterval=24h" | sudo tee -a $1
+    echo | tee -a $1
+    echo '[master]' | tee -a $1
+    echo '  certname=puppet' | tee -a $1
+    echo '[agent]' | tee -a $1
+    echo "  certname=`hostname`" | tee -a $1
+    echo "  runinterval=24h" | tee -a $1
   else
     echo "Nothing added to puppet.conf"
   fi

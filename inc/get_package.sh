@@ -23,7 +23,7 @@ function for_ubuntu {
   if ! apt list --installed 2>/dev/null | grep puppet-agent
   then
     # install package
-    sudo apt install -y puppet-agent
+    apt install -y puppet-agent
   fi
 }
 

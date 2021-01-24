@@ -5,7 +5,7 @@ function set_master () {
   if ! grep -Fq puppet "$HOSTSFILE"
   then
     # if not found
-    echo | sudo tee -a $HOSTSFILE
+    echo | tee -a $HOSTSFILE
     echo '192.168.56.7 puppet' | sudo tee -a $HOSTSFILE
   fi
   echo 'Master is defined'
