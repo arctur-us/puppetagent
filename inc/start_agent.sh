@@ -22,6 +22,7 @@ function start_agent {
     echo '  certname=puppet' | sudo tee -a $CONFFILE
     echo '[agent]' | sudo tee -a $CONFFILE
     echo "  certname=`hostname`" | sudo tee -a $CONFFILE
+    echo "  runinterval=24h" | sudo tee -a $CONFFILE
   else
     echo "Nothing added to puppet.conf"
   fi
