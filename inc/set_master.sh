@@ -2,11 +2,8 @@
 # set_master
 function set_master {
   HOSTSFILE="/etc/hosts"
-  if grep -Fq puppet "$HOSTSFILE"
+  if ! grep -Fq puppet "$HOSTSFILE"
   then
-    # code if found
-    ;;
-  else
     # code if not found
     echo | sudo tee -a $HOSTSFILE
     echo '192.168.56.2 puppet' | sudo tee -a $HOSTSFILE
