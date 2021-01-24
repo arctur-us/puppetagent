@@ -3,9 +3,9 @@ function get_platform {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     linux=`cat /etc/os-release | grep ^ID= | sed 's/.*=//'`
     if [[ "$linux" == "fedora" ]]; then
-      echo "Red Hat"
+      echo "Fedora"
     elif [[ "$linux" == "ubuntu" ]]; then
-      echo "Debian"
+      echo "Ubuntu"
     else
       echo $linux
     fi
