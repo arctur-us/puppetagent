@@ -1,7 +1,7 @@
 #!/bin/bash
 function get_platform {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    linux=`cat /etc/os-release | grep ^ID=`
+    linux=`cat /etc/os-release | grep ^ID= | sed 's/.*=//'`
     if [[ "$linux" == "fedora" ]]; then
       echo "Red Hat"
     elif [[ "$linux" == "ubuntu" ]]; then
