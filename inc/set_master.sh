@@ -6,7 +6,7 @@ function set_master {
   then
     # code if not found
     echo | sudo tee -a $HOSTSFILE
-    echo '192.168.56.2 puppet' | sudo tee -a $HOSTSFILE
+    echo '192.168.56.6 puppet' | sudo tee -a $HOSTSFILE
   fi
   echo 'Master is defined'
 }
