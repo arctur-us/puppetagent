@@ -2,7 +2,7 @@
 # get_package.sh
 function get_package {
   case "$1" in
-    fedora)  echo "Fedora" ;;
+    fedora)  for_fedora ;;
     ubuntu)  for_ubuntu ;;
     darwin)  echo "MacoSX" ;;
     cygwin)  echo "Cygwin" ;;
@@ -15,7 +15,7 @@ function get_package {
 
 function for_ubuntu {
   package='puppet5-release-bionic.deb'
-  # need a check if package exists
+  # check if package exists
   if ! dpkg -l | grep puppet
   then
     # get package
@@ -24,4 +24,9 @@ function for_ubuntu {
   else
     echo 'Already have it'
   fi
+}
+
+function for_fedora {
+  package=''
+  echo "Here is to install"
 }

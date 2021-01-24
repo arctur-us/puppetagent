@@ -7,7 +7,6 @@ source <(cat inc/*)
 echo "Started installing Puppet"
 
 os=`get_platform`
-echo $os
 
 # adding a master host
 echo "Step 1 of 5"
