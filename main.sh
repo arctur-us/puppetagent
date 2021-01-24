@@ -22,6 +22,6 @@ start_agent $os
 
 # certificate request
 echo "Step 4 of 4"
-#request_certificate
+request_certificate
 
 echo "Done. Puppet is installed!"
