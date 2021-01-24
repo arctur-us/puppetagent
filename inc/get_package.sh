@@ -4,10 +4,10 @@ function get_package {
   case "$1" in
     fedora)  for_fedora ;;
     ubuntu)  for_ubuntu ;;
-    darwin)  echo "MacoSX" ;;
-    cygwin)  echo "Cygwin" ;;
-    win32)   echo "WINDOWS" ;;
-    freebsd) echo "FreeBSD" ;;
+    darwin)  echo "To Do MacoSX" ;;
+    cygwin)  echo "To Do Cygwin" ;;
+    win32)   echo "To Do WINDOWS" ;;
+    freebsd) echo "To Do FreeBSD" ;;
     *)       echo "Unknown $1" ;;
   esac
 
@@ -15,7 +15,6 @@ function get_package {
 
 function for_ubuntu {
   package='puppet5-release-bionic.deb'
-  # check if package exists
   if ! dpkg -l | grep puppet
   then
     # get package
@@ -27,6 +26,13 @@ function for_ubuntu {
 }
 
 function for_fedora {
-  package=''
-  echo "Here is to install"
+  package='puppet5-release-fedora-31.noarch.rpm'
+  repoURL='https://yum.puppet.com'
+  if ! rpm -qa | grep puppet
+  then
+    rpm -Uvh ${repoURL}/${package}
+    yum install puppet -y
+  else
+    echo 'Already have it'
+  fi
 }
