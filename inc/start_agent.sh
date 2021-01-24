@@ -4,21 +4,32 @@ function start_agent {
   case "$1" in
     fedora)  at_fedora ;;
     ubuntu)  at_ubuntu ;;
-    darwin)  echo "To Do MacoSX" ;;
+    darwin)  at_macosx ;;
     cygwin)  echo "To Do Cygwin" ;;
     win32)   echo "To Do WINDOWS" ;;
     freebsd) echo "To Do FreeBSD" ;;
     *)       echo "Unknown $1" ;;
   esac
+}
+
+function systemd {
   # check if already running and enabled
   systemctl restart puppet
   systemctl enable puppet
   echo 'Added to systemd'
 }
 
+function at_macosx {
+  CONFFILE="/etc/puppetlabs/puppet/puppet.conf"
+  puppet_conf $CONFFILE
+  launchctl start com.puppetlabs.puppet
+  puppet resource service puppet ensure=running enable=true
+}
+
 function at_fedora {
   CONFFILE="/etc/puppet/puppet.conf"
   puppet_conf $CONFFILE
+  systemd
 }
 
 function at_ubuntu {
@@ -36,6 +47,7 @@ function at_ubuntu {
   # This should go to j2 template in the future
   CONFFILE="/etc/puppetlabs/puppet/puppet.conf"
   puppet_conf $CONFFILE
+  systemd
 }
 
 function puppet_conf {

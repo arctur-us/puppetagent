@@ -13,9 +13,12 @@ function get_package {
 }
 
 function for_macosx {
-  package='puppet-agent-latest.dmg'
-  repoURL='https://downloads.puppetlabs.com/mac/10.13/PC1/x86_64'
-  installdmg ${repoURL}/${package}
+  if ! pkgutil --pkgs | grep -cq puppet
+  then
+    package='puppet-agent-latest.dmg'
+    repoURL='https://downloads.puppetlabs.com/mac/10.13/PC1/x86_64'
+    installdmg ${repoURL}/${package}
+  fi
 }
 
 function installdmg {
@@ -58,7 +61,5 @@ function for_fedora {
   then
     rpm -Uvh ${repoURL}/${package}
     yum install puppet -y
-  else
-    echo 'Already have it'
   fi
 }
