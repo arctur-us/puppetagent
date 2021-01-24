@@ -11,7 +11,7 @@ echo $os
 
 # adding a master host
 echo "Step 1 of 5"
-#set_master
+set_master( $os )
 
 # download package agent
 echo "Step 2 of 5"

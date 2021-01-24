@@ -1,6 +1,7 @@
 #!/bin/bash
 # set_master.sh
-function set_master {
+function set_master ( $myos ) {
+  echo "$myos from function"
   HOSTSFILE="/etc/hosts"
   if ! grep -Fq puppet "$HOSTSFILE"
   then
