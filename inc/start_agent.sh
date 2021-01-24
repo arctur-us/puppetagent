@@ -3,16 +3,16 @@
 function start_agent {
   # This should go to j2 template in the future
   CONFFILE="/etc/puppetlabs/puppet/puppet.conf"
-  if ! grep -Fq puppet "$CONFFILE"
+  if ! grep -Fq master "$CONFFILE"
   then
     # if not found
     echo | sudo tee -a $CONFFILE
-    echo 'master' | sudo tee -a $CONFFILE
+    echo '[master]' | sudo tee -a $CONFFILE
     echo '  certname=puppet' | sudo tee -a $CONFFILE
   else
-    echo "Nothing added"
+    echo "Nothing added to puppet.conf"
   fi
-  cat $CONFFILE
+
   echo 'Added to systemd'
 
   # check if already running and enabled
