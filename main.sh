@@ -18,7 +18,7 @@ get_package $os
 
 # start puppet service
 echo "Step 3 of 4"
-# start_agent
+start_agent $os
 
 # certificate request
 echo "Step 4 of 4"
