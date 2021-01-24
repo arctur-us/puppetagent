@@ -29,6 +29,6 @@ function start_agent {
   echo 'Added to systemd'
 
   # check if already running and enabled
-#  sudo systemctl restart puppet
-#  sudo systemctl enable puppet
+ sudo systemctl restart puppet
+ sudo systemctl enable puppet
 }
