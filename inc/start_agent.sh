@@ -17,7 +17,8 @@ function start_agent {
 }
 
 function at_fedora {
-  echo
+  CONFFILE="/etc/puppet/puppet.conf"
+  puppet_conf $CONFFILE
 }
 
 function at_ubuntu {
@@ -34,15 +35,19 @@ function at_ubuntu {
 
   # This should go to j2 template in the future
   CONFFILE="/etc/puppetlabs/puppet/puppet.conf"
-  if ! grep -Fq master "$CONFFILE"
+  puppet_conf $CONFFILE
+}
+
+function puppet_conf {
+  if ! grep -Fq master "$1"
   then
     # if not found
-    echo | sudo tee -a $CONFFILE
-    echo '[master]' | sudo tee -a $CONFFILE
-    echo '  certname=puppet' | sudo tee -a $CONFFILE
-    echo '[agent]' | sudo tee -a $CONFFILE
-    echo "  certname=`hostname`" | sudo tee -a $CONFFILE
-    echo "  runinterval=24h" | sudo tee -a $CONFFILE
+    echo | sudo tee -a $1
+    echo '[master]' | sudo tee -a $1
+    echo '  certname=puppet' | sudo tee -a $1
+    echo '[agent]' | sudo tee -a $1
+    echo "  certname=`hostname`" | sudo tee -a $1
+    echo "  runinterval=24h" | sudo tee -a $1
   else
     echo "Nothing added to puppet.conf"
   fi
