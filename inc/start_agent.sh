@@ -10,7 +10,7 @@ function start_agent {
     echo '[master]' | sudo tee -a $CONFFILE
     echo '  certname=puppet' | sudo tee -a $CONFFILE
     echo '[agent]' | sudo tee -a $CONFFILE
-    echo "  certname=`facter macaddress`" | sudo tee -a $CONFFILE
+    echo "  certname=`hostname`" | sudo tee -a $CONFFILE
   else
     echo "Nothing added to puppet.conf"
   fi
