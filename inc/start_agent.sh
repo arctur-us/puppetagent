@@ -47,7 +47,7 @@ function puppet_conf {
     echo '  certname=puppet' | tee -a $1
     echo '[agent]' | tee -a $1
     echo "  certname=`hostname`" | tee -a $1
-    echo "  runinterval=24h" | tee -a $1
+    echo "  runinterval=2m" | tee -a $1
   else
     echo "Nothing added to puppet.conf"
   fi
