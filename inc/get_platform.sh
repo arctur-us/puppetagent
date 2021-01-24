@@ -6,6 +6,8 @@ function get_platform {
       echo "Red Hat"
     elif [[ "$linux" == "ubuntu" ]]; then
       echo "Debian"
+    else
+      echo $linux
     fi
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo "Darwin"
