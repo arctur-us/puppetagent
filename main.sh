@@ -13,4 +13,4 @@ echo "Started installing Puppet"
 set_master
 
 # download package agent
-#get_package
+get_package

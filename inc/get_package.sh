@@ -7,5 +7,7 @@ function get_package {
     # install package
     sudo wget -O /tmp/${package} https://apt.puppetlabs.com/${package}
     sudo dpkg -i /tmp/${package}
+  else
+    echo 'Already installed'
   fi
 }
