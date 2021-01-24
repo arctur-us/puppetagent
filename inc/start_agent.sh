@@ -7,7 +7,7 @@ function start_agent {
   then
     # if not found
     echo | sudo tee -a $CONFFILE
-    echo '[master]' | sudo tee -a $CONFFILE
+    echo 'master' | sudo tee -a $CONFFILE
     echo '  certname=puppet' | sudo tee -a $CONFFILE
   fi
   cat $CONFFILE
