@@ -1,6 +1,6 @@
 #!/bin/bash
 # main.sh
-
+#
 # edit hosts file
 # download package agent -> install package agent -> install puppet module
 #                        -> add to sudoers -> sign certificate -> set run interval -> start service
@@ -18,11 +18,12 @@ set_master
 
 # download package agent
 echo "Step 2 of 8"
-#get_package
+get_package
 
 # install package agent
 echo "Step 3 of 8"
-#install_package
+install_package
 
-# add puppet module
-puppet_module
+# start puppet service
+echo "Step 4 of 8"
+start_agent

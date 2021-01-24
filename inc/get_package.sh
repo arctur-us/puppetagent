@@ -1,4 +1,5 @@
 #!/bin/bash
+# get_package.sh
 function get_package {
   package='puppet5-release-bionic.deb'
   # need a check if package exists

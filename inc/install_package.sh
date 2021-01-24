@@ -1,5 +1,5 @@
 #!/bin/bash
-# install_package
+# install_package.sh
 function install_package {
   # need a check if installed
   if ! apt list --installed 2>/dev/null | grep puppet-agent
