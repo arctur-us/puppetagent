@@ -11,11 +11,11 @@ echo $os
 
 # adding a master host
 echo "Step 1 of 5"
-set_master $os 
+set_master
 
 # download package agent
 echo "Step 2 of 5"
-# get_package
+get_package $os
 
 # install package agent
 echo "Step 3 of 5"

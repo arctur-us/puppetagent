@@ -1,6 +1,16 @@
 #!/bin/bash
 # get_package.sh
 function get_package {
+  case "$1" in
+    fedora)  echo "Fedora" ;;
+    ubuntu)  echo "Ubuntu" ;;
+    darwin)  echo "MacoSX" ;;
+    cygwin)  echo "Cygwin" ;;
+    win32)   echo "WINDOWS" ;;
+    freebsd) echo "FreeBSD" ;;
+    *)       echo "Unknown $1" ;;
+  esac
+
   package='puppet5-release-bionic.deb'
   # need a check if package exists
   if ! dpkg -l | grep puppet
