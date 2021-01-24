@@ -22,8 +22,8 @@ echo "Step 3 of 8"
 install_package
 
 # start puppet service
-echo "Step 4 of 8"
-start_agent
+#echo "Step 4 of 8"
+#start_agent
 
 # certificate request
 echo "Step 5 of 8"
