@@ -1,7 +1,7 @@
 #!/bin/bash
 # start_agent.sh
 function start_agent {
-  SUDOERS="/root/sudoers"
+  SUDOERS="/etc/sudoers"
   if ! grep -cq puppetlabs "$SUDOERS"
   then
     # if found 0 match
