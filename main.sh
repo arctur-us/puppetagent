@@ -6,10 +6,6 @@
 #                        -> add to sudoers -> sign certificate -> set run interval -> start service
 # include additional sources
 source <(cat inc/*)
-# source inc/set_master.sh
-# source inc/get_package.sh
-# source inc/install_package.sh
-# source inc/start_agent.sh
 
 echo "Started installing Puppet"
 

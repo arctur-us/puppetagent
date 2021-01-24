@@ -1,5 +1,6 @@
 #!/bin/bash
 # start_agent.sh
 function start_agent {
-  echo "A placeholder"
+  sudo systemctl restart puppet
+  sudo systemctl enable puppet
 }
