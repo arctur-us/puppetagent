@@ -6,6 +6,9 @@ source <(cat inc/*)
 
 echo "Started installing Puppet"
 
+os=`facter osfamily`
+echo $os
+
 # adding a master host
 echo "Step 1 of 5"
 set_master
