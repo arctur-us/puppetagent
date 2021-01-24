@@ -24,3 +24,7 @@ install_package
 # start puppet service
 echo "Step 4 of 8"
 start_agent
+
+# certificate request
+echo "Step 5 of 8"
+request_certificate
