@@ -10,7 +10,6 @@ function get_package {
     freebsd) echo "To Do FreeBSD" ;;
     *)       echo "Unknown $1" ;;
   esac
-
 }
 
 function for_ubuntu {
@@ -20,8 +19,11 @@ function for_ubuntu {
     # get package
     wget -O /tmp/${package} https://apt.puppetlabs.com/${package}
     dpkg -i /tmp/${package}
-  else
-    echo 'Already have it'
+  fi
+  if ! apt list --installed 2>/dev/null | grep puppet-agent
+  then
+    # install package
+    sudo apt install -y puppet-agent
   fi
 }
 

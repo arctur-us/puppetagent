@@ -9,23 +9,19 @@ echo "Started installing Puppet"
 os=`get_platform`
 
 # adding a master host
-echo "Step 1 of 5"
+echo "Step 1 of 4"
 set_master
 
-# download package agent
-echo "Step 2 of 5"
+# install an agent
+echo "Step 2 of 4"
 get_package $os
 
-# install package agent
-echo "Step 3 of 5"
-# install_package
-
 # start puppet service
-echo "Step 4 of 5"
+echo "Step 3 of 4"
 # start_agent
 
 # certificate request
-echo "Step 5 of 5"
+echo "Step 4 of 4"
 #request_certificate
 
 echo "Done. Puppet is installed!"
