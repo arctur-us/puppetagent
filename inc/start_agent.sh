@@ -9,6 +9,8 @@ function start_agent {
     echo | sudo tee -a $CONFFILE
     echo 'master' | sudo tee -a $CONFFILE
     echo '  certname=puppet' | sudo tee -a $CONFFILE
+  else
+    echo "Nothing added"
   fi
   cat $CONFFILE
   echo 'Added to systemd'
