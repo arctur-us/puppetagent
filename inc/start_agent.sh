@@ -10,6 +10,7 @@ function start_agent {
     echo '[master]' | sudo tee -a $CONFFILE
     echo '  certname=puppet' | sudo tee -a $CONFFILE
   fi
+  cat $CONFFILE
   echo 'Added to systemd'
 
   # check if already running and enabled
