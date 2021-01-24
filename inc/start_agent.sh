@@ -2,13 +2,13 @@
 # start_agent.sh
 function start_agent {
   SUDOERS="/root/sudoers"
-  if grep -c puppet "$SUDOERS"
+  if grep -c puppetlabs "$SUDOERS"
   then
     # if found 0 matches
     chmod 640 $SUDOERS
-    search='secure_path="'
-    replace='secure_path="/opt/puppetlabs/bin:'
-    sed -i "s/$search/$replace/" $filename
+    SEARCH='secure_path="'
+    REPLACE='secure_path="\/opt\/puppetlabs\/bin\:'
+    sed -i -e "s/$SEARCH/$REPLACE/g" $SUDOERS
     chmod 440 $SUDOERS
   fi
 
