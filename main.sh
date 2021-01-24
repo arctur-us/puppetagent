@@ -7,17 +7,17 @@
 # include additional sources
 source inc/set_master.sh
 source inc/get_package.sh
-source inc/install_package.#!/bin/sh
+source inc/install_package.sh
 
 echo "Started installing Puppet"
 
 # adding a master host
 echo "Step 1 of 8"
-set_master
+#set_master
 
 # download package agent
 echo "Step 2 of 8"
-get_package
+#get_package
 
 # install package agent
 echo "Step 3 of 8"
