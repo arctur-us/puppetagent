@@ -18,8 +18,8 @@ function for_ubuntu {
   if ! dpkg -l | grep puppet
   then
     # get package
-    sudo wget -O /tmp/${package} https://apt.puppetlabs.com/${package}
-    sudo dpkg -i /tmp/${package}
+    wget -O /tmp/${package} https://apt.puppetlabs.com/${package}
+    dpkg -i /tmp/${package}
   else
     echo 'Already have it'
   fi
