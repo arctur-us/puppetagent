@@ -2,7 +2,11 @@
 # main.sh
 #
 # include additional sources
-source <(cat inc/*)
+source inc/get_platform.sh
+source inc/set_master.sh
+source inc/get_package.sh
+source inc/request_certificate.sh
+source inc/start_agent.sh
 
 echo "Started installing Puppet"
 
@@ -18,10 +22,10 @@ get_package $os
 
 # start puppet service
 echo "Step 3 of 4"
-start_agent $os
+# start_agent $os
 
 # certificate request
 echo "Step 4 of 4"
-request_certificate
+#request_certificate
 
 echo "Done. Puppet is installed!"
