@@ -6,12 +6,12 @@ source <(cat inc/*)
 
 echo "Started installing Puppet"
 
-os=`facter osfamily`
+os=`get_platform`
 echo $os
 
 # adding a master host
 echo "Step 1 of 5"
-set_master
+#set_master
 
 # download package agent
 echo "Step 2 of 5"
