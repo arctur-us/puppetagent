@@ -9,7 +9,7 @@ Runs Puppet agent on a workstation with bash
 ### Setup
 Download the repository from GitHub and run locally on a terminal:
 ```
-git clone https://github.com/yerbolkhassen/puppetagent.git
+git clone https://github.com/arctur-us/puppetagent.git
 cd puppetagent
 sudo bash main.sh
 ```
